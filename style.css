@@ -1,0 +1,137 @@
+/* ==========================================================================
+   STYLE.CSS — PORTOFOLIO KHANSA SAKHIYA PUTRI
+   Tema: Soft Pink & Rose Gold
+   ========================================================================== */
+
+/* 1. Pengaturan Dasar Halaman */
+body {
+  background-color: #FFF9FB;
+  color: #2D1B22;
+  overflow-x: hidden;
+}
+
+/* 2. Pola Latar Belakang Titik Soft Pink Halus pada Hero Section */
+.bg-soft-pattern {
+  background-image: radial-gradient(rgba(232, 93, 136, 0.13) 1px, transparent 1px);
+  background-size: 26px 26px;
+}
+
+/* 3. Efek Glassmorphism pada Bilah Navigasi Atas */
+.glass-nav {
+  background: rgba(255, 249, 251, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* 4. Animasi Mengambang Halus untuk Badge Profil */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes floatDelayed {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+.animate-float {
+  animation: floatSlow 4.2s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: floatDelayed 4.8s ease-in-out infinite;
+}
+
+/* 5. Animasi Muncul Bertahap (Scroll Reveal) */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 6. Aturan Ketat Kontainer Gambar Kartu Galeri (Tinggi Tetap 210px)
+      Memastikan gambar tidak pernah meluap atau menutupi judul & penjelasan */
+.gallery-image-frame {
+  height: 210px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.gallery-image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 7. Aturan Ketat Kontainer Gambar Kartu Sertifikat (Tinggi Tetap 240px) */
+.certificate-image-frame {
+  height: 240px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.certificate-image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 8. Aturan Ketat Kontainer Gambar Lightbox Modal
+      Memisahkan area foto di atas (maksimal 52vh) dengan blok teks di bawah */
+.lightbox-image-frame {
+  max-height: 52vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.lightbox-image-frame img {
+  max-height: 48vh;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* 9. Custom Scrollbar Bernuansa Pink */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FFF9FB;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #F48FB1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #E85D88;
+}
